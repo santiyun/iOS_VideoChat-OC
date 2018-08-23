@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9B0F97B12123D3AA00FBCD37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F97B02123D3AA00FBCD37 /* AppDelegate.m */; };
+		9B0F97B72123D3AA00FBCD37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B0F97B52123D3AA00FBCD37 /* Main.storyboard */; };
+		9B0F97B92123D3AB00FBCD37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B0F97B82123D3AB00FBCD37 /* Assets.xcassets */; };
+		9B0F97BC2123D3AB00FBCD37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B0F97BA2123D3AB00FBCD37 /* LaunchScreen.storyboard */; };
+		9B0F97BF2123D3AB00FBCD37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F97BE2123D3AB00FBCD37 /* main.m */; };
+		9B0F97C72123D4E900FBCD37 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0F97C62123D4E900FBCD37 /* SystemConfiguration.framework */; };
+		9B0F97C92123D4F300FBCD37 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0F97C82123D4F300FBCD37 /* CoreTelephony.framework */; };
+		9B0F97CB2123D4FE00FBCD37 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0F97CA2123D4FE00FBCD37 /* ReplayKit.framework */; };
+		9B0F97CD2123D50400FBCD37 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0F97CC2123D50400FBCD37 /* libc++.tbd */; };
+		9B0F97CF2123D50A00FBCD37 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0F97CE2123D50A00FBCD37 /* libxml2.tbd */; };
+		9B0F97D12123D51000FBCD37 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0F97D02123D51000FBCD37 /* libiconv.tbd */; };
+		9B0F97D42123D6C900FBCD37 /* TTTUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F97D32123D6C900FBCD37 /* TTTUser.m */; };
+		9B0F97DA2123D70300FBCD37 /* TTProgressHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F97D62123D70300FBCD37 /* TTProgressHud.m */; };
+		9B0F97DB2123D70300FBCD37 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F97D92123D70300FBCD37 /* UIView+Toast.m */; };
+		9B0F97DE2123D72800FBCD37 /* TTTRtcManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F97DD2123D72800FBCD37 /* TTTRtcManager.m */; };
+		9B0F97E02123D79C00FBCD37 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0F97DF2123D79C00FBCD37 /* libz.tbd */; };
+		9B0F97E42123D8F700FBCD37 /* TTTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F97E32123D8F700FBCD37 /* TTTLoginViewController.m */; };
+		9B0F97E72123D90300FBCD37 /* TTTVideoChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F97E62123D90300FBCD37 /* TTTVideoChatViewController.m */; };
+		9B0F97EA2123D99800FBCD37 /* TTTAVRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F97E92123D99800FBCD37 /* TTTAVRegion.m */; };
+		9B0F97EC2123D9A600FBCD37 /* TTTAVRegion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B0F97EB2123D9A600FBCD37 /* TTTAVRegion.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9B0F97AC2123D3AA00FBCD37 /* TTTVideoChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTTVideoChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B0F97AF2123D3AA00FBCD37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9B0F97B02123D3AA00FBCD37 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9B0F97B62123D3AA00FBCD37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9B0F97B82123D3AB00FBCD37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9B0F97BB2123D3AB00FBCD37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9B0F97BD2123D3AB00FBCD37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B0F97BE2123D3AB00FBCD37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9B0F97C62123D4E900FBCD37 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9B0F97C82123D4F300FBCD37 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		9B0F97CA2123D4FE00FBCD37 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
+		9B0F97CC2123D50400FBCD37 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		9B0F97CE2123D50A00FBCD37 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		9B0F97D02123D51000FBCD37 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		9B0F97D22123D6C900FBCD37 /* TTTUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTTUser.h; sourceTree = "<group>"; };
+		9B0F97D32123D6C900FBCD37 /* TTTUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTTUser.m; sourceTree = "<group>"; };
+		9B0F97D62123D70300FBCD37 /* TTProgressHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTProgressHud.m; sourceTree = "<group>"; };
+		9B0F97D72123D70300FBCD37 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		9B0F97D82123D70300FBCD37 /* TTProgressHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTProgressHud.h; sourceTree = "<group>"; };
+		9B0F97D92123D70300FBCD37 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		9B0F97DC2123D72800FBCD37 /* TTTRtcManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTTRtcManager.h; sourceTree = "<group>"; };
+		9B0F97DD2123D72800FBCD37 /* TTTRtcManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTTRtcManager.m; sourceTree = "<group>"; };
+		9B0F97DF2123D79C00FBCD37 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		9B0F97E12123D7F700FBCD37 /* TTTVideoChat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TTTVideoChat-Prefix.pch"; sourceTree = "<group>"; };
+		9B0F97E22123D8F700FBCD37 /* TTTLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTTLoginViewController.h; sourceTree = "<group>"; };
+		9B0F97E32123D8F700FBCD37 /* TTTLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTTLoginViewController.m; sourceTree = "<group>"; };
+		9B0F97E52123D90300FBCD37 /* TTTVideoChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTTVideoChatViewController.h; sourceTree = "<group>"; };
+		9B0F97E62123D90300FBCD37 /* TTTVideoChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTTVideoChatViewController.m; sourceTree = "<group>"; };
+		9B0F97E82123D99800FBCD37 /* TTTAVRegion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTTAVRegion.h; sourceTree = "<group>"; };
+		9B0F97E92123D99800FBCD37 /* TTTAVRegion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTTAVRegion.m; sourceTree = "<group>"; };
+		9B0F97EB2123D9A600FBCD37 /* TTTAVRegion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTTAVRegion.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9B0F97A92123D3AA00FBCD37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B0F97E02123D79C00FBCD37 /* libz.tbd in Frameworks */,
+				9B0F97D12123D51000FBCD37 /* libiconv.tbd in Frameworks */,
+				9B0F97CF2123D50A00FBCD37 /* libxml2.tbd in Frameworks */,
+				9B0F97CD2123D50400FBCD37 /* libc++.tbd in Frameworks */,
+				9B0F97CB2123D4FE00FBCD37 /* ReplayKit.framework in Frameworks */,
+				9B0F97C92123D4F300FBCD37 /* CoreTelephony.framework in Frameworks */,
+				9B0F97C72123D4E900FBCD37 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9B0F97A32123D3AA00FBCD37 = {
+			isa = PBXGroup;
+			children = (
+				9B0F97AE2123D3AA00FBCD37 /* TTTVideoChat */,
+				9B0F97AD2123D3AA00FBCD37 /* Products */,
+				9B0F97C52123D4E900FBCD37 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9B0F97AD2123D3AA00FBCD37 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B0F97AC2123D3AA00FBCD37 /* TTTVideoChat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B0F97AE2123D3AA00FBCD37 /* TTTVideoChat */ = {
+			isa = PBXGroup;
+			children = (
+				9B0F97AF2123D3AA00FBCD37 /* AppDelegate.h */,
+				9B0F97B02123D3AA00FBCD37 /* AppDelegate.m */,
+				9B0F97DC2123D72800FBCD37 /* TTTRtcManager.h */,
+				9B0F97DD2123D72800FBCD37 /* TTTRtcManager.m */,
+				9B0F97E22123D8F700FBCD37 /* TTTLoginViewController.h */,
+				9B0F97E32123D8F700FBCD37 /* TTTLoginViewController.m */,
+				9B0F97E52123D90300FBCD37 /* TTTVideoChatViewController.h */,
+				9B0F97E62123D90300FBCD37 /* TTTVideoChatViewController.m */,
+				9B0F97E82123D99800FBCD37 /* TTTAVRegion.h */,
+				9B0F97E92123D99800FBCD37 /* TTTAVRegion.m */,
+				9B0F97EB2123D9A600FBCD37 /* TTTAVRegion.xib */,
+				9B0F97D22123D6C900FBCD37 /* TTTUser.h */,
+				9B0F97D32123D6C900FBCD37 /* TTTUser.m */,
+				9B0F97D52123D70300FBCD37 /* TTHelper */,
+				9B0F97B52123D3AA00FBCD37 /* Main.storyboard */,
+				9B0F97B82123D3AB00FBCD37 /* Assets.xcassets */,
+				9B0F97BA2123D3AB00FBCD37 /* LaunchScreen.storyboard */,
+				9B0F97E12123D7F700FBCD37 /* TTTVideoChat-Prefix.pch */,
+				9B0F97BD2123D3AB00FBCD37 /* Info.plist */,
+				9B0F97BE2123D3AB00FBCD37 /* main.m */,
+			);
+			path = TTTVideoChat;
+			sourceTree = "<group>";
+		};
+		9B0F97C52123D4E900FBCD37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B0F97DF2123D79C00FBCD37 /* libz.tbd */,
+				9B0F97D02123D51000FBCD37 /* libiconv.tbd */,
+				9B0F97CE2123D50A00FBCD37 /* libxml2.tbd */,
+				9B0F97CC2123D50400FBCD37 /* libc++.tbd */,
+				9B0F97CA2123D4FE00FBCD37 /* ReplayKit.framework */,
+				9B0F97C82123D4F300FBCD37 /* CoreTelephony.framework */,
+				9B0F97C62123D4E900FBCD37 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B0F97D52123D70300FBCD37 /* TTHelper */ = {
+			isa = PBXGroup;
+			children = (
+				9B0F97D62123D70300FBCD37 /* TTProgressHud.m */,
+				9B0F97D72123D70300FBCD37 /* UIView+Toast.h */,
+				9B0F97D82123D70300FBCD37 /* TTProgressHud.h */,
+				9B0F97D92123D70300FBCD37 /* UIView+Toast.m */,
+			);
+			path = TTHelper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9B0F97AB2123D3AA00FBCD37 /* TTTVideoChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B0F97C22123D3AB00FBCD37 /* Build configuration list for PBXNativeTarget "TTTVideoChat" */;
+			buildPhases = (
+				9B0F97A82123D3AA00FBCD37 /* Sources */,
+				9B0F97A92123D3AA00FBCD37 /* Frameworks */,
+				9B0F97AA2123D3AA00FBCD37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TTTVideoChat;
+			productName = TTTVideoChat;
+			productReference = 9B0F97AC2123D3AA00FBCD37 /* TTTVideoChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9B0F97A42123D3AA00FBCD37 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = yanzhen;
+				TargetAttributes = {
+					9B0F97AB2123D3AA00FBCD37 = {
+						CreatedOnToolsVersion = 9.4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 9B0F97A72123D3AA00FBCD37 /* Build configuration list for PBXProject "TTTVideoChat" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9B0F97A32123D3AA00FBCD37;
+			productRefGroup = 9B0F97AD2123D3AA00FBCD37 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9B0F97AB2123D3AA00FBCD37 /* TTTVideoChat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9B0F97AA2123D3AA00FBCD37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B0F97BC2123D3AB00FBCD37 /* LaunchScreen.storyboard in Resources */,
+				9B0F97B92123D3AB00FBCD37 /* Assets.xcassets in Resources */,
+				9B0F97B72123D3AA00FBCD37 /* Main.storyboard in Resources */,
+				9B0F97EC2123D9A600FBCD37 /* TTTAVRegion.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9B0F97A82123D3AA00FBCD37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B0F97DB2123D70300FBCD37 /* UIView+Toast.m in Sources */,
+				9B0F97E72123D90300FBCD37 /* TTTVideoChatViewController.m in Sources */,
+				9B0F97E42123D8F700FBCD37 /* TTTLoginViewController.m in Sources */,
+				9B0F97DA2123D70300FBCD37 /* TTProgressHud.m in Sources */,
+				9B0F97DE2123D72800FBCD37 /* TTTRtcManager.m in Sources */,
+				9B0F97BF2123D3AB00FBCD37 /* main.m in Sources */,
+				9B0F97B12123D3AA00FBCD37 /* AppDelegate.m in Sources */,
+				9B0F97D42123D6C900FBCD37 /* TTTUser.m in Sources */,
+				9B0F97EA2123D99800FBCD37 /* TTTAVRegion.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9B0F97B52123D3AA00FBCD37 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9B0F97B62123D3AA00FBCD37 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9B0F97BA2123D3AB00FBCD37 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9B0F97BB2123D3AB00FBCD37 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9B0F97C02123D3AB00FBCD37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9B0F97C12123D3AB00FBCD37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9B0F97C32123D3AB00FBCD37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4SZ6BRJK5P;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../TTTLib";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/TTTVideoChat/TTTVideoChat-Prefix.pch";
+				INFOPLIST_FILE = TTTVideoChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					TTTPlayerKit,
+					"-framework",
+					TTTRtcEngineKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.3ttech.TTTVideoChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9B0F97C42123D3AB00FBCD37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4SZ6BRJK5P;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../TTTLib";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/TTTVideoChat/TTTVideoChat-Prefix.pch";
+				INFOPLIST_FILE = TTTVideoChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					TTTPlayerKit,
+					"-framework",
+					TTTRtcEngineKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.3ttech.TTTVideoChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9B0F97A72123D3AA00FBCD37 /* Build configuration list for PBXProject "TTTVideoChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B0F97C02123D3AB00FBCD37 /* Debug */,
+				9B0F97C12123D3AB00FBCD37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B0F97C22123D3AB00FBCD37 /* Build configuration list for PBXNativeTarget "TTTVideoChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B0F97C32123D3AB00FBCD37 /* Debug */,
+				9B0F97C42123D3AB00FBCD37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9B0F97A42123D3AA00FBCD37 /* Project object */;
+}
