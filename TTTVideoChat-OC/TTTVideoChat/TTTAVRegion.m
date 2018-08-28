@@ -26,7 +26,7 @@
         [[NSBundle mainBundle] loadNibNamed:@"TTTAVRegion" owner:self options:nil];
         _backgroundView.frame = self.bounds;
         _backgroundView.backgroundColor = UIColor.clearColor;
-        _backgroundView.alpha = 0.9;
+        _backgroundView.alpha = 0.7;
         [self addSubview:_backgroundView];
     }
     return self;
@@ -47,6 +47,7 @@
 #pragma mark - public
 - (void)configureRegion:(TTTUser *)user {
     self.user = user;
+    _backgroundView.alpha = 1.0;
     [_voiceBtn setImage:[UIImage imageNamed:@"voice_small"] forState:UIControlStateNormal];
     _idLabel.hidden = NO;
     _voiceBtn.hidden = NO;
@@ -70,6 +71,7 @@
     _voiceBtn.hidden = YES;
     _audioStatsLabel.hidden = YES;
     _videoStatsLabel.hidden = YES;
+    _backgroundView.alpha = 0.7;
     _user = nil;
     _videoView.image = [UIImage imageNamed:@"video_head"];
 }

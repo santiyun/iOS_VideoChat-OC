@@ -36,11 +36,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入房间ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Jv-eq-lP8">
-                                        <rect key="frame" x="101.66666666666669" y="0.0" width="205" height="33"/>
+                                        <rect key="frame" x="101.66666666666667" y="0.0" width="223.33333333333331" height="33"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="205" id="TGz-bj-WJR"/>
-                                        </constraints>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -53,17 +50,18 @@
                                     <constraint firstItem="jKH-qG-OOE" firstAttribute="leading" secondItem="Slb-Ii-8pa" secondAttribute="leading" constant="50" id="ih4-kg-brp"/>
                                     <constraint firstAttribute="bottom" secondItem="6Jv-eq-lP8" secondAttribute="bottom" id="rrw-Se-QVr"/>
                                     <constraint firstItem="jKH-qG-OOE" firstAttribute="top" secondItem="Slb-Ii-8pa" secondAttribute="top" id="tOM-0P-hEh"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Jv-eq-lP8" secondAttribute="trailing" constant="50" id="u6y-3P-DHq"/>
                                     <constraint firstAttribute="height" constant="33" id="vb9-5A-Ovg"/>
                                     <constraint firstAttribute="bottom" secondItem="jKH-qG-OOE" secondAttribute="bottom" id="y4T-BQ-Bnj"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLg-0M-CNm">
                                 <rect key="frame" x="50" y="344" width="275" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.14117647058823529" green="0.71372549019607845" blue="0.792156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="IFQ-gi-7u3"/>
                                 </constraints>
-                                <state key="normal" title="进入">
+                                <state key="normal" title="进入房间">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -290,7 +288,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBH-cr-64H">
-                                <rect key="frame" x="8" y="52" width="35" height="170"/>
+                                <rect key="frame" x="8" y="52" width="35" height="80"/>
                                 <subviews>
                                     <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgE-0S-XJK">
                                         <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
@@ -312,35 +310,15 @@
                                             <action selector="leftBtnsAction:" destination="0Y9-SM-OLi" eventType="touchUpInside" id="V6p-Y8-L0E"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aza-St-2YV">
-                                        <rect key="frame" x="0.0" y="90" width="35" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="EiU-ZN-jDW"/>
-                                        </constraints>
-                                        <state key="normal" image="music"/>
-                                    </button>
-                                    <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdX-cW-xgr">
-                                        <rect key="frame" x="0.0" y="135" width="35" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="3Fz-gd-uAI"/>
-                                        </constraints>
-                                        <state key="normal" image="more"/>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="kgE-0S-XJK" secondAttribute="trailing" id="1bF-el-KH4"/>
-                                    <constraint firstItem="jdX-cW-xgr" firstAttribute="leading" secondItem="aBH-cr-64H" secondAttribute="leading" id="2mm-kl-NSN"/>
                                     <constraint firstItem="Ds3-PX-THt" firstAttribute="top" secondItem="kgE-0S-XJK" secondAttribute="bottom" constant="10" id="Hng-Hs-ddC"/>
-                                    <constraint firstItem="Aza-St-2YV" firstAttribute="leading" secondItem="aBH-cr-64H" secondAttribute="leading" id="OgA-7t-52w"/>
                                     <constraint firstAttribute="width" constant="35" id="RwR-Jw-7Iw"/>
-                                    <constraint firstItem="jdX-cW-xgr" firstAttribute="top" secondItem="Aza-St-2YV" secondAttribute="bottom" constant="10" id="ToC-D3-LUN"/>
-                                    <constraint firstAttribute="trailing" secondItem="Aza-St-2YV" secondAttribute="trailing" id="V3r-fK-los"/>
-                                    <constraint firstItem="Aza-St-2YV" firstAttribute="top" secondItem="Ds3-PX-THt" secondAttribute="bottom" constant="10" id="Z4S-tj-uol"/>
                                     <constraint firstAttribute="trailing" secondItem="Ds3-PX-THt" secondAttribute="trailing" id="g5A-nz-tQw"/>
                                     <constraint firstItem="kgE-0S-XJK" firstAttribute="leading" secondItem="aBH-cr-64H" secondAttribute="leading" id="hvN-2C-3is"/>
-                                    <constraint firstAttribute="height" constant="170" id="imE-5g-l4A"/>
-                                    <constraint firstAttribute="trailing" secondItem="jdX-cW-xgr" secondAttribute="trailing" id="qjA-Ky-ra3"/>
+                                    <constraint firstAttribute="height" constant="80" id="imE-5g-l4A"/>
                                     <constraint firstItem="kgE-0S-XJK" firstAttribute="top" secondItem="aBH-cr-64H" secondAttribute="top" id="qzA-6g-lx5"/>
                                     <constraint firstItem="Ds3-PX-THt" firstAttribute="leading" secondItem="aBH-cr-64H" secondAttribute="leading" id="zne-Fv-pke"/>
                                 </constraints>
@@ -405,8 +383,6 @@
         <image name="exit" width="23" height="24"/>
         <image name="launch" width="375" height="667"/>
         <image name="logo" width="142" height="27"/>
-        <image name="more" width="16" height="16"/>
-        <image name="music" width="16" height="16"/>
         <image name="switch" width="35" height="35"/>
         <image name="top_background" width="375" height="71"/>
         <image name="video_head" width="120" height="135"/>
