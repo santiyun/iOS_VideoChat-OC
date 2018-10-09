@@ -39,14 +39,25 @@
     TTManager.me.mutedSelf = NO;
     TTManager.roomID = _roomIDTF.text.longLongValue;
     [TTProgressHud showHud:self.view];
-    TTManager.rtcEngine.delegate = self;
-    [TTManager.rtcEngine enableVideo];
-    [TTManager.rtcEngine muteLocalAudioStream:NO];
-    [TTManager.rtcEngine setChannelProfile:TTTRtc_ChannelProfile_Communication];
-    [TTManager.rtcEngine enableAudioVolumeIndication:200 smooth:3];
+    TTTRtcEngineKit *rtcEngine = TTManager.rtcEngine;
+    rtcEngine.delegate = self;
+    [rtcEngine enableVideo];
+    [rtcEngine muteLocalAudioStream:NO];
+    [rtcEngine setChannelProfile:TTTRtc_ChannelProfile_Communication];
+    [rtcEngine enableAudioVolumeIndication:200 smooth:3];
+    //settings
+    if (TTManager.isHighQualityAudio) {
+        [rtcEngine setHighQualityAudioParametersWithFullband:YES stereo:YES fullBitrate:YES];
+    }
     BOOL swapWH = UIInterfaceOrientationIsPortrait(UIApplication.sharedApplication.statusBarOrientation);
-    [TTManager.rtcEngine setVideoProfile:TTTRtc_VideoProfile_360P swapWidthAndHeight:swapWH];
-    [TTManager.rtcEngine joinChannelByKey:nil channelName:_roomIDTF.text uid:_uid joinSuccess:nil];
+    if (TTManager.videoCustomProfile.isCustom) {
+        TTTCustomVideoProfile profile = TTManager.videoCustomProfile;
+        CGSize videoSize = swapWH ? CGSizeMake(profile.videoSize.height, profile.videoSize.width) : profile.videoSize;
+        [rtcEngine setVideoProfile:videoSize frameRate:profile.fps bitRate:profile.videoBitRate];
+    } else {
+        [rtcEngine setVideoProfile:TTManager.videoProfile swapWidthAndHeight:swapWH];
+    }
+    [rtcEngine joinChannelByKey:nil channelName:_roomIDTF.text uid:_uid joinSuccess:nil];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

@@ -27,6 +27,7 @@
 		9B0F97E72123D90300FBCD37 /* TTTVideoChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F97E62123D90300FBCD37 /* TTTVideoChatViewController.m */; };
 		9B0F97EA2123D99800FBCD37 /* TTTAVRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F97E92123D99800FBCD37 /* TTTAVRegion.m */; };
 		9B0F97EC2123D9A600FBCD37 /* TTTAVRegion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B0F97EB2123D9A600FBCD37 /* TTTAVRegion.xib */; };
+		9BCB13642148AEAA00DD0724 /* TTTSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB13632148AEAA00DD0724 /* TTTSettingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,8 @@
 		9B0F97E82123D99800FBCD37 /* TTTAVRegion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTTAVRegion.h; sourceTree = "<group>"; };
 		9B0F97E92123D99800FBCD37 /* TTTAVRegion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTTAVRegion.m; sourceTree = "<group>"; };
 		9B0F97EB2123D9A600FBCD37 /* TTTAVRegion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TTTAVRegion.xib; sourceTree = "<group>"; };
+		9BCB13622148AEAA00DD0724 /* TTTSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTTSettingViewController.h; sourceTree = "<group>"; };
+		9BCB13632148AEAA00DD0724 /* TTTSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTTSettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		9B0F97AE2123D3AA00FBCD37 /* TTTVideoChat */ = {
 			isa = PBXGroup;
 			children = (
+				9BCB13612148AE9000DD0724 /* Settings */,
 				9B0F97AF2123D3AA00FBCD37 /* AppDelegate.h */,
 				9B0F97B02123D3AA00FBCD37 /* AppDelegate.m */,
 				9B0F97DC2123D72800FBCD37 /* TTTRtcManager.h */,
@@ -148,6 +152,15 @@
 				9B0F97D92123D70300FBCD37 /* UIView+Toast.m */,
 			);
 			path = TTHelper;
+			sourceTree = "<group>";
+		};
+		9BCB13612148AE9000DD0724 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9BCB13622148AEAA00DD0724 /* TTTSettingViewController.h */,
+				9BCB13632148AEAA00DD0724 /* TTTSettingViewController.m */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BCB13642148AEAA00DD0724 /* TTTSettingViewController.m in Sources */,
 				9B0F97DB2123D70300FBCD37 /* UIView+Toast.m in Sources */,
 				9B0F97E72123D90300FBCD37 /* TTTVideoChatViewController.m in Sources */,
 				9B0F97E42123D8F700FBCD37 /* TTTLoginViewController.m in Sources */,

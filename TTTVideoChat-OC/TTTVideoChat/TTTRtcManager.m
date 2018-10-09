@@ -39,6 +39,7 @@ static id _manager;
     if (self) {
         _rtcEngine = [TTTRtcEngineKit sharedEngineWithAppId:@"a967ac491e3acf92eed5e1b5ba641ab7" delegate:self];
         _me = [[TTTUser alloc] initWith:0];
+        _videoProfile = TTTRtc_VideoProfile_Default;
     }
     return self;
 }
