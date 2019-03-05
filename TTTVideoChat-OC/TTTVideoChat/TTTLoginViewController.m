@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *roomIDTF;
 @property (weak, nonatomic) IBOutlet UILabel *websiteLabel;
 @property (nonatomic, assign) int64_t uid;
+
 @end
 
 @implementation TTTLoginViewController
@@ -61,7 +62,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [_roomIDTF resignFirstResponder];
+    [self.view endEditing:YES];
 }
 
 #pragma mark - TTTRtcEngineDelegate

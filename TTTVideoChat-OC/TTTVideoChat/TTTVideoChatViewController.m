@@ -119,10 +119,19 @@
 }
 
 - (void)rtcEngineConnectionDidLost:(TTTRtcEngineKit *)engine {
-    [self.view.window showToast:@"ConnectionDidLost"];
+    [TTProgressHud showHud:self.view message:@"网络链接丢失，正在重连..."];
+}
+
+- (void)rtcEngineReconnectServerTimeout:(TTTRtcEngineKit *)engine {
+    [TTProgressHud hideHud:self.view];
+    [self.view.window showToast:@"网络丢失，请检查网络"];
     [engine leaveChannel:nil];
     [engine stopPreview];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)rtcEngineReconnectServerSucceed:(TTTRtcEngineKit *)engine {
+    [TTProgressHud hideHud:self.view];
 }
 
 - (void)rtcEngine:(TTTRtcEngineKit *)engine didKickedOutOfUid:(int64_t)uid reason:(TTTRtcKickedOutReason)reason {
