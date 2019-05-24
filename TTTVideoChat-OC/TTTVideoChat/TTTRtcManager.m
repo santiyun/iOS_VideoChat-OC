@@ -37,8 +37,7 @@ static id _manager;
 - (instancetype)init {
     self = [super init];
     if (self) {
-        NSString *appId = <#name#>;
-        _rtcEngine = [TTTRtcEngineKit sharedEngineWithAppId:appId delegate:self];
+        _rtcEngine = [TTTRtcEngineKit sharedEngineWithAppId:<#name#> delegate:self];
         _me = [[TTTUser alloc] initWith:0];
         _videoProfile = TTTRtc_VideoProfile_Default;
     }

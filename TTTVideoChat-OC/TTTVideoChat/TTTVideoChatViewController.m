@@ -55,10 +55,13 @@
 }
 
 - (IBAction)exitChannel:(id)sender {
+    __weak TTTVideoChatViewController *weakSelf = self;
     UIAlertController *alert  = [UIAlertController alertControllerWithTitle:@"提示" message:@"您确定要退出房间吗？" preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [TTManager.rtcEngine leaveChannel:nil];
+        [TTManager.rtcEngine stopPreview];
+        [weakSelf dismissViewControllerAnimated:YES completion:nil];
     }];
     [alert addAction:sureAction];
     [self presentViewController:alert animated:YES completion:nil];
@@ -109,15 +112,6 @@
     [[self getAVRegion:stats.uid] setRemoterVideoStats:stats.receivedBitrate];
 }
 
-- (void)rtcEngine:(TTTRtcEngineKit *)engine firstRemoteVideoFrameDecodedOfUid:(int64_t)uid size:(CGSize)size elapsed:(NSInteger)elapsed {
-    //解码远端用户第一帧
-}
-
-- (void)rtcEngine:(TTTRtcEngineKit *)engine didLeaveChannelWithStats:(TTTRtcStats *)stats {
-    [engine stopPreview];
-    [self dismissViewControllerAnimated:true completion:nil];
-}
-
 - (void)rtcEngineConnectionDidLost:(TTTRtcEngineKit *)engine {
     [TTProgressHud showHud:self.view message:@"网络链接丢失，正在重连..."];
 }
@@ -137,15 +131,6 @@
 - (void)rtcEngine:(TTTRtcEngineKit *)engine didKickedOutOfUid:(int64_t)uid reason:(TTTRtcKickedOutReason)reason {
     NSString *errorInfo = @"";
     switch (reason) {
-        case TTTRtc_KickedOut_KickedByHost:
-            errorInfo = @"被主播踢出";
-            break;
-        case TTTRtc_KickedOut_PushRtmpFailed:
-            errorInfo = @"rtmp推流失败";
-            break;
-        case TTTRtc_KickedOut_MasterExit:
-            errorInfo = @"主播已退出";
-            break;
         case TTTRtc_KickedOut_ReLogin:
             errorInfo = @"重复登录";
             break;
@@ -155,9 +140,6 @@
         case TTTRtc_KickedOut_NoVideoData:
             errorInfo = @"长时间没有上行视频数据";
             break;
-        case TTTRtc_KickedOut_NewChairEnter:
-            errorInfo = @"其他人以主播身份进入";
-            break;
         case TTTRtc_KickedOut_ChannelKeyExpired:
             errorInfo = @"Channel Key失效";
             break;
@@ -166,6 +148,9 @@
             break;
     }
     [self.view.window showToast:errorInfo];
+    [engine leaveChannel:nil];
+    [engine stopPreview];
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 #pragma mark - helper mehtod

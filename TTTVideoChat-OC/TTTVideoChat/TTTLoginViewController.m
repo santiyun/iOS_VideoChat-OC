@@ -19,8 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *websitePrefix = @"http://www.3ttech.cn ";
-    _websiteLabel.text = [websitePrefix stringByAppendingString:TTTRtcEngineKit.getSdkVersion];
+    NSString *dateStr = NSBundle.mainBundle.infoDictionary[@"CFBundleVersion"];
+    _websiteLabel.text = [TTTRtcEngineKit.getSdkVersion stringByAppendingFormat:@"__%@", dateStr];
     _uid = arc4random() % 100000 + 1;
     int64_t roomID = [[NSUserDefaults standardUserDefaults] stringForKey:@"ENTERROOMID"].longLongValue;
     if (roomID == 0) {
@@ -45,10 +45,10 @@
     [rtcEngine enableVideo];
     [rtcEngine muteLocalAudioStream:NO];
     [rtcEngine setChannelProfile:TTTRtc_ChannelProfile_Communication];
-    [rtcEngine enableAudioVolumeIndication:200 smooth:3];
+    [rtcEngine enableAudioVolumeIndication:1000 smooth:3];
     //settings
     if (TTManager.isHighQualityAudio) {
-        [rtcEngine setHighQualityAudioParametersWithFullband:YES stereo:YES fullBitrate:YES];
+        [rtcEngine setPreferAudioCodec:TTTRtc_AudioCodec_AAC bitrate:96 channels:1];
     }
     BOOL swapWH = UIInterfaceOrientationIsPortrait(UIApplication.sharedApplication.statusBarOrientation);
     if (TTManager.videoCustomProfile.isCustom) {
