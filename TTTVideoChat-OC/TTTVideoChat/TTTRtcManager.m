@@ -37,6 +37,7 @@ static id _manager;
 - (instancetype)init {
     self = [super init];
     if (self) {
+        //设置AppID
         _rtcEngine = [TTTRtcEngineKit sharedEngineWithAppId:<#name#> delegate:self];
         _me = [[TTTUser alloc] initWith:0];
         _videoProfile = TTTRtc_VideoProfile_Default;
