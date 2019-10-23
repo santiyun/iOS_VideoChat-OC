@@ -16,7 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *audioStatsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *videoStatsLabel;
 @property (weak, nonatomic) IBOutlet UIButton *voiceBtn;
-@property (weak, nonatomic) IBOutlet UIView *avRegionsView;
+@property (weak, nonatomic) IBOutlet UIStackView *regionsView;
+
 @property (nonatomic, strong) NSMutableArray<TTTAVRegion *> *avRegions;
 @property (nonatomic, strong) NSMutableArray<TTTUser *> *users;
 @end
@@ -30,10 +31,8 @@
     _users = [NSMutableArray array];
     _roomIDLabel.text = [NSString stringWithFormat:@"房号: %lld", TTManager.roomID];
     _idLabel.text = [NSString stringWithFormat:@"ID: %lld", TTManager.me.uid];
-    for (UIView *subView in _avRegionsView.subviews) {
-        if ([subView isKindOfClass:[TTTAVRegion class]]) {
-            [_avRegions addObject:(TTTAVRegion *)subView];
-        }
+    for (UIView *stack in _regionsView.subviews) {
+        [_avRegions addObjectsFromArray:stack.subviews];
     }
     TTManager.rtcEngine.delegate = self;
     [TTManager.rtcEngine startPreview];
