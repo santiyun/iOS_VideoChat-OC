@@ -3,7 +3,7 @@
 **TTTVideoChat**是Swift演示demo  **TTTVideoChat-OC**是OC演示demo 
 
 #### 准备工作
-1. 在 https://github.com/santiyun/iOS-LiveSDK 下载连麦直播SDK。 放在**TTTLib**目录下
+1. 下载[TTTRtcEngineKit.framework](https://github.com/santiyun/iOS-LiveSDK) 和 [TTTPlayerKit.framework](https://github.com/santiyun/iOS-LiveSDK)。 放在**TTTLib**目录下
 2. 登录三体云官网 [http://dashboard.3ttech.cn/index/login](http://dashboard.3ttech.cn/index/login) 注册体验账号，进入控制台新建自己的应用并获取APPID。
 
 #### demo SDK使用方式：
