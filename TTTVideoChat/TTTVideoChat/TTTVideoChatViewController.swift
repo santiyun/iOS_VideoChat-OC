@@ -31,7 +31,6 @@ class TTTVideoChatViewController: UIViewController {
         }
         
         TTManager.rtcEngine.delegate = self
-        TTManager.rtcEngine.startPreview()
         let videoCanvas = TTTRtcVideoCanvas()
         videoCanvas.uid = TTManager.me.uid
         videoCanvas.renderMode = .render_Adaptive

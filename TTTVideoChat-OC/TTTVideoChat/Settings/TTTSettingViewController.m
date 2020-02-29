@@ -79,21 +79,41 @@ static NSString *videoBitrateStr[] = {
     if ([_videoTitleTF.text isEqualToString:@"自定义"]) {
         NSArray<NSString *> *sizes = [_videoSizeTF.text componentsSeparatedByString:@"x"];
         if (sizes.count != 2) {
-            [self showToast:@"请输入正确的视频尺寸"];
+            [self showToast:@"请输入正确的视频参数"];
             return;
         }
         if (sizes[0].longLongValue <= 0 || sizes[1].longLongValue <= 0) {
-            [self showToast:@"请输入正确的视频尺寸"];
+            [self showToast:@"请输入正确的视频参数"];
+            return;
+        }
+        
+        if (sizes[0].longLongValue > 1920) {
+            [self showToast:@"视频宽最大为1920"];
+            return;
+        }
+        
+        if (sizes[1].longLongValue > 1080) {
+            [self showToast:@"视频高最大为1080"];
             return;
         }
         
         if (_videoBitrateTF.text.longLongValue <= 0) {
-            [self showToast:@"请输入正确的码率"];
+            [self showToast:@"请输入正确码率参数"];
+            return;
+        }
+        
+        if (_videoBitrateTF.text.longLongValue > 5000) {
+            [self showToast:@"码率不能大于5000"];
             return;
         }
         
         if (_videoFpsTF.text.longLongValue <= 0) {
-            [self showToast:@"请输入正确的帧率"];
+            [self showToast:@"请输入正确帧率参数"];
+            return;
+        }
+        
+        if (_videoFpsTF.text.longLongValue > 25) {
+            [self showToast:@"帧率不能大于25"];
             return;
         }
         TTTCustomVideoProfile profile = {YES, CGSizeMake(sizes[0].longLongValue, sizes[1].longLongValue), _videoBitrateTF.text.longLongValue, _videoFpsTF.text.longLongValue};

@@ -58,6 +58,7 @@
     } else {
         [rtcEngine setVideoProfile:TTManager.videoProfile swapWidthAndHeight:swapWH];
     }
+    [rtcEngine startPreview];
     [rtcEngine joinChannelByKey:nil channelName:_roomIDTF.text uid:_uid joinSuccess:nil];
 }
 

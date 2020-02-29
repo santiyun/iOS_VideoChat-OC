@@ -97,28 +97,53 @@ class TTTSettingViewController: UIViewController {
         if videoTitleTF.text == "自定义" {
             //videoSize必须以x分开两个数值
             if videoSizeTF.text == nil || videoSizeTF.text?.count == 0 {
-                showToast("请输入正确的视频尺寸")
+                showToast("请输入正确视频参数")
                 return
             }
             
             let sizes = videoSizeTF.text?.components(separatedBy: "x")
             if sizes?.count != 2 {
-                showToast("请输入正确的视频尺寸")
+                showToast("请输入正确视频参数")
                 return
             }
             
-            guard let sizeW = Int(sizes![0]), let sizeH = Int(sizes![1]) else {
-                showToast("请输入正确的视频尺寸")
+            guard let sizeW = Int(sizes![0]), sizeW > 0 else {
+                showToast("请输入正确视频参数")
                 return
             }
             
-            guard let bitrate = Int(videoBitrateTF.text!) else {
-                showToast("请输入正确的码率")
+            if sizeW > 1920 {
+                showToast("视频宽最大为1920")
                 return
             }
             
-            guard let fps = Int(videoFpsTF.text!) else {
-                showToast("请输入正确的帧率")
+            guard let sizeH = Int(sizes![1]), sizeH > 0 else {
+                showToast("请输入正确视频参数")
+                return
+            }
+            
+            if sizeH > 1080 {
+                showToast("视频高最大为1080")
+                return
+            }
+            
+            guard let bitrate = Int(videoBitrateTF.text!), bitrate > 0 else {
+                showToast("请输入正确码率参数")
+                return
+            }
+            
+            if bitrate > 5000 {
+                showToast("码率不能大于5000")
+                return
+            }
+            
+            guard let fps = Int(videoFpsTF.text!), fps > 0 else {
+                showToast("请输入正确帧率参数")
+                return
+            }
+            
+            if fps > 25 {
+                showToast("帧率不能大于25")
                 return
             }
             

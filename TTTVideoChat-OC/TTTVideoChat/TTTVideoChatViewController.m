@@ -35,7 +35,6 @@
         [_avRegions addObjectsFromArray:stack.subviews];
     }
     TTManager.rtcEngine.delegate = self;
-    [TTManager.rtcEngine startPreview];
     TTTRtcVideoCanvas *videoCanvas = [[TTTRtcVideoCanvas alloc] init];
     videoCanvas.uid = TTManager.me.uid;
     videoCanvas.renderMode = TTTRtc_Render_Adaptive;
