@@ -10,41 +10,26 @@ import UIKit
 import TTTRtcEngineKit
 
 private extension TTTRtcVideoProfile {
-    func getBitRate() -> String {
+    func getProfileInfo() -> (String, String, Int, Int) {
         switch self {
         case ._VideoProfile_120P:
-            return "65"
+            return ("65", "160x120", 15, 0)
         case ._VideoProfile_180P:
-            return "140"
+            return ("140", "320x180", 15, 1)
         case ._VideoProfile_240P:
-            return "200"
+            return ("200", "320x240", 15, 2)
         case ._VideoProfile_480P:
-            return "500"
+            return ("1000", "848x480", 15, 4)
+        case ._VideoProfile_640x480:
+            return ("800", "640x480", 15, 5)
+        case ._VideoProfile_960x540:
+            return ("1600", "960x540", 24, 6)
         case ._VideoProfile_720P:
-            return "1130"
+            return ("2400", "1280x720", 30, 7)
         case ._VideoProfile_1080P:
-            return "2080"
+            return ("3000", "1920x1080", 30, 8)
         default:
-            return "400"
-        }
-    }
-    
-    func getSizeString() -> String {
-        switch self {
-        case ._VideoProfile_120P:
-            return "160X120"
-        case ._VideoProfile_180P:
-            return "320X180"
-        case ._VideoProfile_240P:
-            return "320x240"
-        case ._VideoProfile_480P:
-            return "640x480"
-        case ._VideoProfile_720P:
-            return "1280x720"
-        case ._VideoProfile_1080P:
-            return "1920x1080"
-        default:
-            return "640x360"
+            return ("600", "640x360", 15, 3)
         }
     }
 }
@@ -58,7 +43,7 @@ class TTTSettingViewController: UIViewController {
     @IBOutlet private weak var audioSwitch: UISwitch!
     @IBOutlet private weak var pickBGView: UIView!
     @IBOutlet private weak var pickView: UIPickerView!
-    private let videoSizes = ["120P", "180P", "240P", "360P", "480P", "720P", "1080P", "自定义"]
+    private let videoSizes = ["120P", "180P", "240P", "360P", "480P", "640x480", "960x540", "720P", "1080P", "自定义"]
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -66,30 +51,13 @@ class TTTSettingViewController: UIViewController {
         let isCustom = TTManager.videoCustomProfile.isCustom
         refreshState(isCustom, profile: TTManager.videoProfile)
         if isCustom {
-            pickView.selectRow(7, inComponent: 0, animated: true)
+            pickView.selectRow(9, inComponent: 0, animated: true)
             let custom = TTManager.videoCustomProfile
             videoSizeTF.text = "\(Int(custom.videoSize.width))x\(Int(custom.videoSize.height))"
             videoBitrateTF.text = custom.bitrate.description
             videoFpsTF.text = custom.fps.description
         } else {
-            pickView.selectRow(Int(TTManager.videoProfile.rawValue / 10), inComponent: 0, animated: true)
-        }
-    }
-    
-    private func refreshState(_ isCustom: Bool, profile: TTTRtcVideoProfile) {
-        if isCustom {
-            videoTitleTF.text = "自定义"
-            videoSizeTF.isEnabled = true
-            videoBitrateTF.isEnabled = true
-            videoFpsTF.isEnabled = true
-        } else {
-            let index = profile.rawValue / 10
-            videoTitleTF.text = videoSizes[Int(index)]
-            videoSizeTF.isEnabled = false
-            videoBitrateTF.isEnabled = false
-            videoFpsTF.isEnabled = false
-            videoSizeTF.text = profile.getSizeString()
-            videoBitrateTF.text = profile.getBitRate()
+            pickView.selectRow(TTManager.videoProfile.getProfileInfo().3, inComponent: 0, animated: true)
         }
     }
     
@@ -142,16 +110,11 @@ class TTTSettingViewController: UIViewController {
                 return
             }
             
-            if fps > 25 {
-                showToast("帧率不能大于25")
-                return
-            }
-            
             TTManager.videoCustomProfile = (true,CGSize(width: sizeW, height: sizeH),bitrate,fps)
         } else {
             TTManager.videoCustomProfile.isCustom = false
             let index = pickView.selectedRow(inComponent: 0)
-            TTManager.videoProfile = TTTRtcVideoProfile(rawValue: UInt(index * 10))!
+            TTManager.videoProfile = getProfileIndex(index)
         }
         TTManager.isHighQualityAudio = audioSwitch.isOn
         dismiss(animated: true, completion: nil)
@@ -173,8 +136,8 @@ class TTTSettingViewController: UIViewController {
     @IBAction private func sureSetting(_ sender: Any) {
         pickBGView.isHidden = true
         let index = pickView.selectedRow(inComponent: 0)
-        let profile: TTTRtcVideoProfile = TTTRtcVideoProfile(rawValue: UInt(index * 10))!
-        refreshState(index == 7, profile: profile)
+        let profile: TTTRtcVideoProfile = getProfileIndex(index)
+        refreshState(index == 9, profile: profile)
         videoTitleTF.text = videoSizes[index]
     }
     
@@ -194,5 +157,49 @@ extension TTTSettingViewController: UIPickerViewDelegate, UIPickerViewDataSource
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return videoSizes[row]
+    }
+}
+
+private extension TTTSettingViewController {
+    
+    func refreshState(_ isCustom: Bool, profile: TTTRtcVideoProfile) {
+        if isCustom {
+            videoTitleTF.text = "自定义"
+            videoSizeTF.isEnabled = true
+            videoBitrateTF.isEnabled = true
+            videoFpsTF.isEnabled = true
+        } else {
+            let index = profile.getProfileInfo().3
+            videoTitleTF.text = videoSizes[index]
+            videoSizeTF.isEnabled = false
+            videoBitrateTF.isEnabled = false
+            videoFpsTF.isEnabled = false
+            videoSizeTF.text = profile.getProfileInfo().1
+            videoBitrateTF.text = profile.getProfileInfo().0
+            videoFpsTF.text = profile.getProfileInfo().2.description
+        }
+    }
+    
+    func getProfileIndex(_ index: Int) -> TTTRtcVideoProfile {
+        if index == 0 {
+            return ._VideoProfile_120P
+        } else if index == 1 {
+            return ._VideoProfile_180P
+        } else if index == 2 {
+            return ._VideoProfile_240P
+        } else if index == 3 {
+            return ._VideoProfile_360P
+        } else if index == 4 {
+            return ._VideoProfile_480P
+        } else if index == 5 {
+            return ._VideoProfile_640x480
+        } else if index == 6 {
+            return ._VideoProfile_960x540
+        } else if index == 7 {
+            return ._VideoProfile_720P
+        } else if index == 8 {
+            return ._VideoProfile_1080P
+        }
+        return ._VideoProfile_360P
     }
 }

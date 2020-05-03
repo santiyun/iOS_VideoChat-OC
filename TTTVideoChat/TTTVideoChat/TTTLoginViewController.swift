@@ -47,6 +47,7 @@ class TTTLoginViewController: UIViewController {
         rtcEngine?.enableVideo()
         rtcEngine?.muteLocalAudioStream(false)
         rtcEngine?.enableAudioVolumeIndication(200, smooth: 3)
+//        rtcEngine?.setServerIp("123.126.114.235", port: 25000)
         let swapWH = UIInterfaceOrientationIsPortrait(UIApplication.shared.statusBarOrientation)
         if TTManager.videoCustomProfile.isCustom {//自定义
             let custom = TTManager.videoCustomProfile
@@ -58,11 +59,11 @@ class TTTLoginViewController: UIViewController {
         } else {
             rtcEngine?.setVideoProfile(TTManager.videoProfile, swapWidthAndHeight: swapWH)
         }
+        rtcEngine?.startPreview()
         //高音质
         if TTManager.isHighQualityAudio {
             rtcEngine?.setPrefer(.audioCodec_AAC, bitrate: 96, channels: 1)
         }
-        rtcEngine?.startPreview()
         rtcEngine?.joinChannel(byKey: "", channelName: roomIDTF.text!, uid: uid, joinSuccess: nil)
     }
     

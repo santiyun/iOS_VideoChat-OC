@@ -37,8 +37,8 @@ static id _manager;
 - (instancetype)init {
     self = [super init];
     if (self) {
-        //输入申请的三体云AppId
-        _rtcEngine = [TTTRtcEngineKit sharedEngineWithAppId:<#name#> delegate:self];
+        //输入申请的AppId
+        _rtcEngine = [TTTRtcEngineKit sharedEngineWithAppId:<#AppId#> delegate:self];
         _me = [[TTTUser alloc] initWith:0];
         _videoProfile = TTTRtc_VideoProfile_Default;
     }

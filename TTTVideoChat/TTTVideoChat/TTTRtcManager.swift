@@ -24,7 +24,7 @@ class TTTRtcManager: NSObject {
     public var videoCustomProfile = (isCustom: false, videoSize: CGSize.zero, bitrate: 0, fps: 0)
     private override init() {
         super.init()
-        //输入申请的三体云AppId
-        rtcEngine = TTTRtcEngineKit.sharedEngine(withAppId: <#name#>, delegate: nil)
+        //填写AppId
+        rtcEngine = TTTRtcEngineKit.sharedEngine(withAppId: <#AppId#>, delegate: nil)
     }
 }
